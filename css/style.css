@@ -12,5 +12,34 @@
     margin-top: 10px;
     font-size: small;
 
+}
 
+.register-body {
+    overflow: scroll;
+}
+
+.register input {
+    padding-left: 100px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.register label+input {
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.register {
+    width: max-content;
+    margin-left: 35%;
+    margin-right: 50%;
+    opacity: 1;
+    background-color: rgba(219, 219, 206, 0.3);
+}
+
+.background-register {
+    background-image: url('../image/loan2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
