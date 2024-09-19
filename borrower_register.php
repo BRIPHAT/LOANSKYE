@@ -43,6 +43,19 @@
                 <input type="number" name="credit_score" id="credit_score" placeholder="enter salary amount taken per month" title="enter salary amount taken per month" required="required"><br>
                 <label for="sponsor_name">Sponsor Name:</label>
                 <input type="text" name="sponsor_name" id="sponsor_name" required="required" placeholder="enter your sponsor name" size="28"><br>
+                <label for="profile_sponsor">Sponsor Picture:</label>
+                <input type="file" name="profile_sponsor" id="profile_sponsor" required="required"><br>
+                <label for="document_sponsor">Verification Sponsor Document:</label>
+                <input type="file" name="document_sponsor" id="document_sponsor" placeholder="upload only pdf format file" required="required"><br>
+                <label for="Amount_of_loan">Amount Of Loan borrow:</label>
+                <input type="number" min="50000" max="100000000000" name=" Amount_of_loan" id="Amount_of_loan" placeholder="Enter amount of money borrow" title="Enter amount of money borrow" required="required"><br>
+                <label for="Loan_Purpose">Purpose Of Loan:</label>
+                <textarea name="Loan_Purpose" id="Loan_Purpose" cols="20" rows="3" placeholder="enter the purpose of loan will borrow"></textarea><br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" size="32" placeholder="Enter your Password with more than 8 character" title="Enter your Password with more than 8 character" required="required"><br>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" size="32" placeholder="Enter your Password with more than 8 character" title="Enter your Password with more than 8 character" required="required"><br>
+                <button type="submit" name="submit" class="register-submit">SUBMIT</button>
 
 
 

@@ -14,8 +14,21 @@
 
 }
 
+.register-submit {
+    margin-left: 80px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(231, 105, 105);
+    border-radius: 5px;
+}
+
 .register-body {
     overflow: scroll;
+}
+
+#Loan_Purpose {
+    border-radius: 10px;
+    padding-right: 30px;
 }
 
 .register input {
