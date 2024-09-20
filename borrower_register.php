@@ -9,7 +9,7 @@
 </head>
 
 <body class="register-body">
-    <form action="control/register_control.php" method="post" autocomplete="off">
+    <form action="/control/register_control.php" method="post" autocomplete="off">
         <fieldset class="background-register">
             <fieldset class=" register">
                 <h1>REGISTER IN LOANSKYE</h1>
@@ -20,7 +20,7 @@
                 <label for=" Phone_number">Phone Number:</label>
                 <input type="number" minlength="10" maxlength="10" size="30" name="Phone_number" id=" Phone_number" placeholder="+xxx xxx xxx xxx" required="required"><br>
                 <label for=" Physical_address">Address:</label>
-                <input type="text" name="Pysical_address" id="Pysical_address" size="32" required="required" placeholder="address of your house"><br>
+                <input type="text" name="Physical_address" id="Pysical_address" size="32" required="required" placeholder="address of your house"><br>
                 <label for=" Email">Email:</label>
                 <input type="email" name="Email" id="Email" size="34" required="required" placeholder="exmple@gmail.com"><br>
                 <label for=" date_of_birth">Date Of Birth</label>
@@ -41,8 +41,16 @@
                 <input type="number" minlength="20" name="National_Identification" id=" National_Identification" required="required" placeholder="National number ID"><br>
                 <label for="credit_score">Credit:</label>
                 <input type="number" name="credit_score" id="credit_score" placeholder="enter salary amount taken per month" title="enter salary amount taken per month" required="required"><br>
+                <label for="Value">Value:</label>
+                <input type="number" name="Value" id="Value"><br>
+                <label for="collateral_taken_type">Collateral Type:</label>
+                <input type="text" name="collateral_taken_type" id="collateral_taken_type"><br>
+                <label for="Description">Description:</label>
+                <textarea name="Description" id="Description" cols="20" rows="3" placeholder="Enter the detail about collateral bring for loan"></textarea><br><br>
                 <label for="sponsor_name">Sponsor Name:</label>
                 <input type="text" name="sponsor_name" id="sponsor_name" required="required" placeholder="enter your sponsor name" size="28"><br>
+                <label for="sponsor_name">Sponsor Contact:</label>
+                <input type="number" minlength="10" maxlength="10" name=" contact_sponsor" id="contact_sponsor" required="required" placeholder="enter your sponsor contact" size="28"><br>
                 <label for="profile_sponsor">Sponsor Picture:</label>
                 <input type="file" name="profile_sponsor" id="profile_sponsor" required="required"><br>
                 <label for="document_sponsor">Verification Sponsor Document:</label>
