@@ -14,10 +14,7 @@ if (isset($_POST['submit'])) {
         header('location:../borrower_register.php', "user already exist");
     } else {
 
-        $sql2 = "INSERT INTO loan_applicant(Firstname,Lastname,Phone_number,Physical_address,Email,
-            date_of_birth,country,city,street,house_number,ownership,Profile,National_Identification,
-            credit_score,sponsor_name,contact_sponsor,profile_sponsor,document_sponsor,Amount_of_loan,
-            Loan_Purpose,password,confirm_password)
+        $sql2 = "INSERT INTO loan_applicant(Firstname,Phone_number,Email,password,confirm_password)
             VALUES('$Firstname','$Phone_number','$Email','$password','$confirm_password')";
         $query2 = mysqli_query($conn, $sql2);
         if ($query2) {
