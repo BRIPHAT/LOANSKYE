@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2024 at 03:29 PM
+-- Generation Time: Sep 24, 2024 at 03:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -118,23 +118,6 @@ CREATE TABLE `loan_applicant` (
   `confirm_password` varchar(100) NOT NULL,
   `Date_registered` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `loan_applicant`
---
-
-INSERT INTO `loan_applicant` (`ApplicantID`, `Firstname`, `Lastname`, `Phone_number`, `Physical_address`, `Email`, `date_of_birth`, `country`, `city`, `street`, `house_number`, `ownership`, `Profile`, `National_Identification`, `credit_score`, `sponsor_name`, `contact_sponsor`, `profile_sponsor`, `document_sponsor`, `Amount_of_loan`, `Loan_Purpose`, `password`, `confirm_password`, `Date_registered`) VALUES
-(7, 'BRIAN', 'PETER', 1045466666, '232 ARUSHA', 'z@gmail.com', '2006-01-01', 'TANZANIA', 'ARUSHA', 'KIJENGE ', 33, 'FURNITURE', 'coverp.docx', 2147483647, 888888888888.00, 'JOHN', 756834212, 'FB_IMG_16234452880419597.jpg', 'Cyber - group work21...docx', 1000000000, 'education', 'c8837b23ff8aaa8a2dde915473ce0991', 'c8837b23ff8aaa8a2dde915473ce0991', '2024-09-20');
-
---
--- Triggers `loan_applicant`
---
-DELIMITER $$
-CREATE TRIGGER `insertBorrowerData` BEFORE INSERT ON `loan_applicant` FOR EACH ROW BEGIN INSERT INTO loan_applicant(Firstname,Phone_number,Email,password,confirm_password)
-VALUES(FirstName , PhoneNumber, Email , password , confirmPassword);
-END
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 
