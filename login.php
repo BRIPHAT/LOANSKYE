@@ -1,3 +1,17 @@
+<?php
+if (isset($_GET["submited"]) && $_GET["submited"] == "data_successful") {
+    $message = "Congratulations! You have successfully registered. Please login to access your account.";
+    $subject = "Registration Successful";
+    $Email = $Email;
+    $headers = "From: $Email\r\n";
+    mail($Email, $subject, $message, $headers);
+
+    echo "<p style='color: green;'>$message</p>";
+    echo "<p>A confirmation email has been sent to your email address.</p>";
+} else {
+
+    echo "<p style='color: red;'>Registration failed. Please try again.></p>";
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +27,7 @@
         <fieldset class="login">
             <h1>LOGIN IN LOANSKYE</h1>
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email"><br>
+            <input type="email" name="Email" id="Email" placeholder="example@gmail.com"><br>
             <label for="Phone_number">Phone Number:</label>
             <input type="number" name="Phone_number" id="Phone_number"><br>
             <label for="password">Password:</label>

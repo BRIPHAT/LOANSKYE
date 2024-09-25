@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
         $borrower_email = $row['Email'];
 
         $_SESSION['borrower_email'] = $borrower_email;
-        header('Location: loanee.php');
+        header('Location:../loanee.php');
         exit;
     } else {
         echo "Invalid username or password.";
