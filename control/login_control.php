@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('./include/connection.php');
+include('../include/connection.php');
 error_reporting(1);
 if (isset($_POST['login'])) {
     $Email = $_POST['Email'];
@@ -8,12 +8,12 @@ if (isset($_POST['login'])) {
 
     $sql = "SELECT Email FROM loan_applicant WHERE Email = '$Email' AND password = '$password'";
     $result = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query2);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $borrower_email = $row['Email'];
+    if ($mysqli_num_rows($result) > 0) {
+        $Email = $row['Email'];
 
-        $_SESSION['borrower_email'] = $borrower_email;
+        $_SESSION['Email'] = $Email;
         header('Location:../index.php');
         exit;
     } else {
