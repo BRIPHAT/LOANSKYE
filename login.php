@@ -1,8 +1,11 @@
 <?php
+session_start();
+include_once('control/register_control.php');
 if (isset($_GET["submited"]) && $_GET["submited"] == "data_successful") {
     $message = "Congratulations! You have successfully registered. Please login to access your account.";
     $subject = "Registration Successful";
     $Email = $Email;
+    $Email = $_SESSION['email'];
     $headers = "From: $Email\r\n";
     mail($Email, $subject, $message, $headers);
 

@@ -1,5 +1,5 @@
 <?php
-include('../include/connection.php');
+include('./include/connection.php');
 error_reporting(1);
 if (isset($_POST['submit'])) {
     $Firstname = $_POST['Firstname'];
