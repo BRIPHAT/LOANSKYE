@@ -13,7 +13,7 @@ if (isset($_GET["submited"]) && $_GET["submited"] == "data_successful") {
     echo "<p>A confirmation email has been sent to your email address.</p>";
 } else {
 
-    echo "<p style='color: red;'>Registration failed. Please try again.></p>";
+    echo "<p style='color: red;'>Registration failed. Please try again.</p>";
 } ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,9 @@ if (isset($_GET["submited"]) && $_GET["submited"] == "data_successful") {
             <input type="number" name="Phone_number" id="Phone_number"><br>
             <label for="password">Password:</label>
             <input type="password" name="password" id="passwordl"><br>
-            <input type="submit" value="SUBMIT">
+            <input type="submit" name="login-submit" value=" SUBMIT"><br>
+            <p>OR</p><button><a href="borrower_register.php" style="color: red; text-decoration:none;">REGISTER UP HERE</a>
+            </button>
         </fieldset>
     </form>
 </body>

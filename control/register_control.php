@@ -1,5 +1,5 @@
 <?php
-include('./include/connection.php');
+include './include/connection.php';
 error_reporting(1);
 if (isset($_POST['submit'])) {
     $Firstname = $_POST['Firstname'];
@@ -29,7 +29,6 @@ if (isset($_POST['submit'])) {
         $sql2 = "INSERT INTO loan_applicant(Firstname,Phone_number,Email,password,confirm_password)
             VALUES('$Firstname','$Phone_number','$Email','$password','$confirm_password')";
         $query2 = mysqli_query($conn, $sql2);
-        $result = mysqli_fetch_assoc($query2);
         if ($query2) {
             header("location:../login.php?submited=data_successful");
         }

@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET["login-success"]) && $_GET["login-success"] == "login_successful") {
+    $message = "Congratulations! You have successfully login. Welcome into LOANSKYE.";
+    echo "<p style='color: green;'>$message</p>";
+} else {
+
+    echo "<p style='color: red;'>Login failed. Please try again.</p>";
+}  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,9 +27,11 @@
     </header>
     <main>
         <section class="hero">
-            <h1>Welcome, <?php echo $result['Firstname']; ?>!</h1>
+            <h1>Welcome</h1>
             <p>Get the loan you need to achieve your goals</p>
-            <button class="btn">Apply Now</button>
+            <button class="btn">
+                <a href="loanee.php">Apply Now</a>
+            </button>
         </section>
 </body>
 

@@ -1,22 +1,12 @@
 <?php
-session_start();
-include('../include/connection.php');
-error_reporting(1);
-if (isset($_POST['login'])) {
+require_once "../include/connection.php";
+if (isset($_POST['login-submit'])) {
     $Email = $_POST['Email'];
+    $Phone_number = $_POST['Phone_number'];
     $password = $_POST['password'];
-
-    $sql = "SELECT Email FROM loan_applicant WHERE Email = '$Email' AND password = '$password'";
-    $result = mysqli_query($conn, $sql);
-    $result = mysqli_fetch_assoc($query2);
-
-    if ($mysqli_num_rows($result) > 0) {
-        $Email = $row['Email'];
-
-        $_SESSION['Email'] = $Email;
-        header('Location:../index.php');
-        exit;
-    } else {
-        echo "Invalid username or password.";
+    $sql = "SELECT * FROM loan_applicant WHERE Email = '$Email'";
+    $query = mysqli_query($conn, $sql);
+    if ($query) {
+        header('Location:../index.php?login-success=login_successful');
     }
 }
