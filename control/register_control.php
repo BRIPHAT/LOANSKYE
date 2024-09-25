@@ -23,13 +23,13 @@ if (isset($_POST['submit'])) {
             echo "Invalid phone number format!";
             header("Location: ../borrower_register.php?error=user_already_exists&submitted=data_successful");
             exit;
-            exit;
         }
     } else {
 
         $sql2 = "INSERT INTO loan_applicant(Firstname,Phone_number,Email,password,confirm_password)
             VALUES('$Firstname','$Phone_number','$Email','$password','$confirm_password')";
         $query2 = mysqli_query($conn, $sql2);
+        $result = mysqli_fetch_assoc($query2);
         if ($query2) {
             header("location:../login.php?submited=data_successful");
         }

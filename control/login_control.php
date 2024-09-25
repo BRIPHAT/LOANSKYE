@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../include/connection.php');
+include('./include/connection.php');
 error_reporting(1);
 if (isset($_POST['login'])) {
     $Email = $_POST['Email'];
@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
         $borrower_email = $row['Email'];
 
         $_SESSION['borrower_email'] = $borrower_email;
-        header('Location:../loanee.php');
+        header('Location:../index.php');
         exit;
     } else {
         echo "Invalid username or password.";
