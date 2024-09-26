@@ -22,17 +22,22 @@ if (isset($_POST['submit'])) {
     $document_sponsor = $_POST['document_sponsor'];
     $Amount_of_loan = $_POST['Amount_of_loan'];
     $Loan_Purpose = $_POST['Loan_Purpose'];
-    $sql2 = "INSERT INTO loan_applicant(Lastname,Physical_address,date_of_birth,country,city,street,house_number,ownership,Profile,National_Identification,
-            credit_score,sponsor_name,contact_sponsor,profile_sponsor,document_sponsor,Amount_of_loan,
-            Loan_Purpose)
-            VALUES(''$Lastname','$Physical_address','$date_of_birth','$country','$city','$street','$house_number','$ownership','$Profile','$National_Identification',
-            '$credit_score','$sponsor_name','$contact_sponsor','$profile_sponsor','$document_sponsor','$Amount_of_loan',
-            '$Loan_Purpose')";
-    $query2 = mysqli_query($conn, $sql2);
-    if ($query2) {
-        header("location: login.php?submited=1");
+
+    $sql = "SELECT * FROM loan_applicant WHERE Email='$Email' and Phone_number ='$Phone_number'";
+    $query = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($query) > 0) {
+        if (strlen($contact_sponsor) != 10) {
+            echo "Invalid phone number format!";
+            header("Location: ../borrower_register.php?error=user_already_exists&submitted=data_successful");
+            exit;
+        }
+    } else {
+
+        $sql3 = "CALL Sp_addApplicantDetails1('$Lastname,$Physical_address,$date_of_birth,$country,$city,$street,$house_number,$ownership,$Profile,$National_Identification,$credit_score,
+                $sponsor_name,$contact_sponsor,$profile_sponsor,$document_sponsor,$Amount_of_loan,$Loan_Purpose')";
+        $query3 = mysqli_query($conn, $sql3);
+        if ($query3) {
+            header("location:../index.php?submited=data_successful");
+        }
     }
-}
-if (isset($_GET["submitted"])) {
-    echo "<script>alert('form succesfuly uploaded')</script>";
 }

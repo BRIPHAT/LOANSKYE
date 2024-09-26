@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="register-body">
-    <form action="/control/register_control.php" method="post" autocomplete="off">
+    <form action="control/dashboard_control.php" method="post" autocomplete="off">
         <fieldset class="background-register">
             <fieldset class=" register">
                 <h1>REGISTER IN LOANSKYE</h1>
@@ -35,12 +35,6 @@
                 <input type="number" minlength="20" name="National_Identification" id=" National_Identification" required="required" placeholder="National number ID"><br>
                 <label for="credit_score">Credit:</label>
                 <input type="number" name="credit_score" id="credit_score" placeholder="enter salary amount taken per month" title="enter salary amount taken per month" required="required"><br>
-                <label for="Value">Value:</label>
-                <input type="number" name="Value" id="Value"><br>
-                <label for="collateral_taken_type">Collateral Type:</label>
-                <input type="text" name="collateral_taken_type" id="collateral_taken_type"><br>
-                <label for="Description">Description:</label>
-                <textarea name="Description" id="Description" cols="20" rows="3" placeholder="Enter the detail about collateral bring for loan"></textarea><br><br>
                 <label for="sponsor_name">Sponsor Name:</label>
                 <input type="text" name="sponsor_name" id="sponsor_name" required="required" placeholder="enter your sponsor name" size="28"><br>
                 <label for="sponsor_name">Sponsor Contact:</label>
