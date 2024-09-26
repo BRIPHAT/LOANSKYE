@@ -4,7 +4,7 @@ if (isset($_GET["login-success"]) && $_GET["login-success"] == "login_successful
     echo "<p style='color: green;'>$message</p>";
 } else {
 
-    echo "<p style='color: red;'>Login failed. Please try again.</p>";
+    echo "<p style='color: red;' hidden='off';>Login failed. Please try again.</p>";
 }  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,14 +13,16 @@ if (isset($_GET["login-success"]) && $_GET["login-success"] == "login_successful
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOANSKYE</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class=" register" id="main_body">
+
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Apply for Loan</a></li>
+                <li><a href=" index.php">Home</a></li>
+                <li><a href="borrower loan/Calculate_interest">Apply for Loan</a></li>
                 <li><a href="#">Track Application</a></li>
             </ul>
         </nav>
@@ -30,7 +32,7 @@ if (isset($_GET["login-success"]) && $_GET["login-success"] == "login_successful
             <h1>Welcome</h1>
             <p>Get the loan you need to achieve your goals</p>
             <button class="btn">
-                <a href="loanee.php">Apply Now</a>
+                <a href="Calculate_interest.php">Apply Now</a>
             </button>
         </section>
 </body>

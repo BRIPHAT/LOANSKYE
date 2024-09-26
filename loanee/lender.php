@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="/control/register_control.php" method="post" autocomplete="off">
+    <form action="../control/register_control.php" method="post" autocomplete="off">
         <fieldset class="background-register">
             <fieldset class=" register">
                 <h1>Lender Registration Form</h1>

@@ -10,7 +10,7 @@
 
 <body>
     <h1>Admit Loan to Borrower</h1>
-    <form action="admit_loan.php" method="post">
+    <form action="../control/loan_admitted_control.php" method="post">
         <fieldset class="background-register">
             <fieldset class=" register">
                 <label for="borrower_name">Borrower Name:</label>

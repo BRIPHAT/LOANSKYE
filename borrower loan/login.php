@@ -26,7 +26,7 @@ if (isset($_GET["submited"]) && $_GET["submited"] == "data_successful") {
 </head>
 
 <body>
-    <form action="control/login_control.php" method="post">
+    <form action="../control/login_control.php" method="post">
         <fieldset class="login">
             <h1>LOGIN IN LOANSKYE</h1>
             <label for="email">Email:</label>

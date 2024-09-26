@@ -19,7 +19,7 @@ if (isset($_GET["submited"]) && $_GET["submited"] == "data_successful") {
 </head>
 
 <body class="register-body">
-    <form action="control/register_control.php" method="post" autocomplete="off">
+    <form action="../control/register_control.php" method="post" autocomplete="off">
         <fieldset class="background-register">
             <fieldset class=" register">
                 <h1>REGISTER IN LOANSKYE</h1>
