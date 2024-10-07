@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($query) > 0) {
         if (strlen($Phone_number) != 10) {
             echo "Invalid phone number format!";
-            header("Location: ../borrower_register.php?error=user_already_exists&submitted=data_successful");
+            header("Location: ../borrower loan/borrower_register.php?error=user_already_exists&submitted=data_successful");
             exit;
         }
     } else {
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
             VALUES('$Firstname','$Phone_number','$Email','$password','$confirm_password')";*/
         $query2 = mysqli_query($conn, $sql2);
         if ($query2) {
-            header("location:../login.php?submited=data_successful");
+            header("location:../borrower loan/login.php?submited=data_successful");
         }
     }
 }
