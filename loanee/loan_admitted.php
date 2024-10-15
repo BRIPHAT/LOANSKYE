@@ -1,34 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- loan_admitted.php -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOANSKYE</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<div class="max-w-md mx-auto p-4 bg-white rounded-md shadow-md">
+    <h2 class="text-lg font-bold mb-4">Loan Admitted</h2>
+    <p class="text-gray-600 mb-2">Loan ID: <?php echo $loan_id; ?></p>
+    <p class="text-gray-600 mb-2">Loan Amount: <?php echo $loan_amount; ?></p>
+    <p class="text-gray-600 mb-2">Interest Rate: <?php echo $interest_rate; ?>%</p>
+    <p class="text-gray-600 mb-2">Loan Status: <?php echo $loan_status; ?></p>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        View Loan Details
+    </button>
+</div>
 
-<body>
-    <h1>Admit Loan to Borrower</h1>
-    <form action="../control/loan_admitted_control.php" method="post">
-        <fieldset class="background-register">
-            <fieldset class=" register">
-                <label for="borrower_name">Borrower Name:</label>
-                <input type="text" id="borrower_name" name="borrower_name" required><br>
-
-                <label for="loan_amount">Loan Amount:</label>
-                <input type="number" id="loan_amount" name="loan_amount" required><br>
-
-                <label for="loan_term">Loan Term:</label>
-                <input type="number" id="loan_term" name="loan_term" required><br>
-
-                <label for="interest_rate">Interest Rate:</label>
-                <input type="number" id="interest_rate" name="interest_rate" required><br>
-
-                <input type="submit" value="Admit Loan">
-            </fieldset>
-        </fieldset>
-    </form>
-</body>
-
-</html>
+<!-- loan_admitted.php -->
+<div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
+    <header class="flex justify-between mb-4">
+        <a href="#" class="text-2xl font-bold">Loanee/Lender Platform</a>
+        <nav class="flex justify-end">
+            <a href="#" class="text-gray-600 hover:text-gray-900">Payment History</a>
+            <a href="#" class="text-gray-600 hover:text-gray-900">Loan Applications</a>
+        </nav>
+    </header>
+    <section class="bg-white shadow-md p-4 md:p-6 lg:p-12">
+        <h2 class="text-2xl font-bold mb-2">Loan Details</h2>
+        <ul class="list-none mb-4">
+            <li class="flex justify-between mb-2">
+                <span class="text-gray-600">Loan ID:</span>
+                <span class="text-gray-900">LOAN-001</span>
+            </li>
+            <li class="flex justify-between mb-2">
+                <span class="text-gray-600">Loan Amount:</span>
+                <span class="text-gray-900">$10,000</span>
+            </li>
+            <!-- Add more loan details here -->
+        </ul>
+        <div class="flex justify-end">
+            <a href="#" class="btn btn-primary">View Loan Documents</a>
+            <a href="#" class="btn btn-primary">Make Payment</a>
+        </div>
+    </section>
+</div>

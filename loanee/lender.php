@@ -1,41 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- lender.php -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOANSKYE LENDER REGISTER FORM</title>
-</head>
-
-<body>
-    <form action="../control/register_control.php" method="post" autocomplete="off">
-        <fieldset class="background-register">
-            <fieldset class=" register">
-                <h1>Lender Registration Form</h1>
-                <form action=" /control/lender_control.php" method="post">
-                    <label for="loan_officer_name">Loan Officer Name:</label>
-                    <input type="text" id="loan_officer_name" name="loan_officer_name" required>
-
-                    <label for="phone_number">Phone Number:</label>
-                    <input type="tel" id="phone_number" name="phone_number" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="role">Role:</label>
-                    <select id="role" name="role" required>
-                        <option value="">Select Role</option>
-                        <option value="lender">Lender</option>
-                        <option value="borrower">Borrower</option>
-                    </select>
-
-                    <input type="submit" name="submit" value=" Register">
-            </fieldset>
-        </fieldset>
-    </form>
-</body>
-
-</html>
-</body>
-
-</html>
+<div class="max-w-md mx-auto p-4 bg-white rounded-md shadow-md">
+    <h2 class="text-lg font-bold mb-4">Lender Profile</h2>
+    <p class="text-gray-600 mb-2">Lender Name: <?php echo $lender_name; ?></p>
+    <p class="text-gray-600 mb-2">Lender Email: <?php echo $lender_email; ?></p>
+    <h3 class="text-lg font-bold mb-2">Loan Offers</h3>
+    <ul>
+        <?php foreach ($loan_offers as $offer) { ?>
+            <li class="mb-2">
+                <p class="text-gray-600">Loan Amount: <?php echo $offer['amount']; ?></p>
+                <p class="text-gray-600">Interest Rate: <?php echo $offer['interest_rate']; ?>%</p>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    View Offer Details
+                </button>
+            </li>
+        <?php } ?>
+    </ul>
+</div>

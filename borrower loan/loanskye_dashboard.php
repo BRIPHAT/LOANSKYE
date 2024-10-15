@@ -1,56 +1,57 @@
-<html>
+<!-- borrower_dashboard.php -->
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>
-        Loans2Go
-    </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrower Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
 
+<body>
+    <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
+        <h1 class="text-3xl font-bold">Borrower Dashboard</h1>
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <h2 class="text-2xl font-bold">My Details</h2>
+                <?php
+                // Fetch borrower details from database
+                $borrowerDetails = array(
+                    'name' => 'John Doe',
+                    'email' => 'johndoe@example.com',
+                    'phone' => '123-456-7890',
+                );
+                ?>
+                <p>Name: <?php echo $borrowerDetails['name']; ?></p>
+                <p>Email: <?php echo $borrowerDetails['email']; ?></p>
+                <p>Phone: <?php echo $borrowerDetails['phone']; ?></p>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <h2 class="text-2xl font-bold">My Loans</h2>
+                <ul>
+                    <?php
+                    // Fetch borrower's loans from database
+                    $loans = array(
+                        array('id' => 1, 'title' => 'Loan 1', 'amount' => 1000),
+                        array('id' => 2, 'title' => 'Loan 2', 'amount' => 2000),
+                    );
 
-<main class="relative">
-    <div class="relative">
-        <img alt="Background image with a house model and stacked coins" class="w-full h-96 object-cover" height="600" src="https://storage.googleapis.com/a1aa/image/shRK9f81LSR1Gakoq609YfNKuafgMQ1EohHj2hEDVqs1rBGnA.jpg" width="1920" />
-        <div class="absolute inset-0 bg-black opacity-50">
-        </div>
-        <div class="absolute inset-0 flex flex-col justify-center items-start px-10 text-white">
-            <h1 class="text-4xl font-bold mb-4">
-                Looking for a same day loan?
-            </h1>
-            <p class="mb-6">
-                Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti sociosqu ad litora torquent per conubia.
-            </p>
-            <button class="bg-black text-white px-6 py-3 rounded-md">
-                FIND OUT MORE
-            </button>
-        </div>
-        <div class="absolute right-10 top-1/2 transform -translate-y-1/2 bg-gray-900 p-8 rounded-md shadow-lg">
-            <form>
-                <input class="w-full mb-4 p-3 rounded-md bg-gray-800 text-white" placeholder="Your Name" type="text" />
-                <input class="w-full mb-4 p-3 rounded-md bg-gray-800 text-white" placeholder="Your E-mail" type="email" />
-                <input class="w-full mb-4 p-3 rounded-md bg-gray-800 text-white" placeholder="Your Phone" type="tel" />
-                <p class="text-gray-400 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
-                </p>
-                <button class="bg-red-600 text-white px-6 py-3 rounded-md w-full">
-                    APPLY FOR A LOAN NOW!
-                </button>
-            </form>
+                    foreach ($loans as $loan) {
+                    ?>
+                        <li>
+                            <a href="loan_details.php?id=<?php echo $loan['id']; ?>">
+                                <?php echo $loan['title']; ?> (<?php echo $loan['amount']; ?>)
+                            </a>
+                        </li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            </div>
         </div>
     </div>
-    <section class="py-16 text-center">
-        <h2 class="text-3xl font-bold">
-            Why Choose us?
-        </h2>
-    </section>
-</main>
 </body>
 
 </html>
