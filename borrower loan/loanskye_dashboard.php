@@ -11,19 +11,12 @@
 </head>
 
 <body>
-    <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12">
+    <div class="container mx-auto p-4 pt-6 md:p-6 lg:p-12" href="../control/dashboard_control.php">
         <h1 class="text-3xl font-bold">Borrower Dashboard</h1>
         <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0" >
                 <h2 class="text-2xl font-bold">My Details</h2>
-                <?php
-                // Fetch borrower details from database
-                $borrowerDetails = array(
-                    'name' => 'John Doe',
-                    'email' => 'johndoe@example.com',
-                    'phone' => '123-456-7890',
-                );
-                ?>
+               
                 <p>Name: <?php echo $borrowerDetails['name']; ?></p>
                 <p>Email: <?php echo $borrowerDetails['email']; ?></p>
                 <p>Phone: <?php echo $borrowerDetails['phone']; ?></p>
@@ -34,9 +27,8 @@
                     <?php
                     // Fetch borrower's loans from database
                     $loans = array(
-                        array('id' => 1, 'title' => 'Loan 1', 'amount' => 1000),
-                        array('id' => 2, 'title' => 'Loan 2', 'amount' => 2000),
-                    );
+                        array('id' => $loanId, 'title' => $loans, 'amount' => $amount),
+                        array('id' => $loanId, 'title' => $loans, 'amount' => $amount));
 
                     foreach ($loans as $loan) {
                     ?>
